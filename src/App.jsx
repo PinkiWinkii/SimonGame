@@ -22,10 +22,76 @@ function App() {
     }
   })
 
-  return (
-    <>
+  const colors = [
+    {
+      color:'#FAF303',
+      ref: yellowRef,
+      sound: 'one'
+    },
+    {
+      color:'#030AFA',
+      ref: blueRef,
+      sound: 'two'
+    },
+    {
+      color:'#FA0E03',
+      ref: redRef,
+      sound: 'three'
+    },
+    {
+      color:'#0AFA03',
+      ref: greenRef,
+      sound: 'four'
+    }
+  ]
 
+  const minNumber = 0;
+  const maxNumber = 3;
+  const speedGame = 400;
+
+  const [sequence, setSequence] = useState([]);
+  const [currentGame, setCurrentGame] = useState([]);
+  const [isAllowedToPlay, setIsAllowedToPlay] = useState(false);
+  const [speed, setSpeed] = useState(speedGame);
+  const [turn, setTurn] = useState(0);
+  const [pulses, setPulses] = useState(0);
+  const [success, setSuccess] = useState(0);
+  const [isGameOn, setIsGameOn] = useState(false);
+
+  return (
+  <>
+  {
+  isGameOn
+  ?
+  <>
+    <div className='header'>
+      <h1>Turn {turn}</h1>
+    </div>
+    <div className='container'>
+
+      {colors.map((item, index) => {
+        return (
+          <div
+            key={index}
+            ref={item.ref}
+            className={`pad pad-${index}`}
+            style={{backgroundColor:`${item.color}`, opacity:0.6}}
+            onClick={() => handleClick(index)}
+          >
+          </div>
+        )
+      })}
+    </div>
     </>
+  :
+  <>
+    <div className='header'>
+      <h1>SUPER SIMON</h1>
+    </div>
+    <button onClick={initGame}>START</button>
+  </>
+  }
+  </>
   )
 }
 
