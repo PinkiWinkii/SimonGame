@@ -22,6 +22,8 @@ function App() {
     }
   })
 
+
+
   const colors = [
     {
       color:'#FAF303',
@@ -42,7 +44,7 @@ function App() {
       color:'#0AFA03',
       ref: greenRef,
       sound: 'four'
-    }
+    },
   ]
 
   const minNumber = 0;
@@ -88,7 +90,9 @@ function App() {
     if(pulses > 0) {
       if(Number(sequence[pulses - 1]) === Number(currentGame[pulses - 1])){
           setSuccess(success + 1);
+          console.log("ACIERTO");
         } else {
+          console.log("FALLO");
           const index = sequence[pulses - 1];
           if(index) colors[index].ref.current.style.opacity = (1);
           play({id: 'error'});
@@ -102,7 +106,7 @@ function App() {
     }, [pulses]);
 
   useEffect(() => {
-    if(isGameOn) {
+    if(!isGameOn) {
       setSequence([]);
       setCurrentGame([]);
       setIsAllowedToPlay(false);
