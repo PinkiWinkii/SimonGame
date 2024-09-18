@@ -1,7 +1,6 @@
 #root {
   max-width: 1280;
   text-align: center;
-  overflow: hidden;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,12 +10,10 @@
 
 .background-game {
   background-image: url('assets/FULL_GAME.jpg'); /* Imagen para cuando el juego está activo */
-  margin-top: -35px;
 }
 
 .background-start {
   background-image: url('assets/innStart.jpg'); /* Imagen para cuando el juego no está activo */
-  margin-top: -35px;
 }
 
 .app-container {

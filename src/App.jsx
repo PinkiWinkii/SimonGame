@@ -191,12 +191,10 @@ const colors = [
   :
   <>
   <div>
-
-
     <h1 className='simon-potions'>SIMON'S POTIONS</h1>
     
     <button onClick={initGame}>GRAB A DRINK</button>
-    </div>
+  </div>
 
   </>
   }
