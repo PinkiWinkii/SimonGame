@@ -152,9 +152,7 @@ function App() {
   isGameOn
   ?
   <>
-    <div className='header'>
-      <h1>Turn {turn}</h1>
-    </div>
+      <h2>Turn: {turn}</h2>
     <div className='container'>
 
       {colors.map((item, index) => {

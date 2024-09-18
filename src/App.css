@@ -42,8 +42,8 @@
 
 .pad {
   position: absolute;
-  width: 120px; 
-  height: 120px;
+  width: 200px; 
+  height: 200px;
   margin: 15px; 
   border-radius: 50%; 
   transition: transform 0.2s; 
@@ -54,23 +54,23 @@
   transform: scale(1.1); /* Efecto de agrandamiento al pasar el cursor */
 }
 
+.pad-0 {
+  top: 450px; /*AMARILLO*/
+  left: 280px; 
+}
 
 .pad-1 {
-  top: 100px; /* 20px desde el borde superior AZUL */
-  left: 100px; /* 20px desde el borde izquierdo */
+  top: 270px; /*  AZUL */
+  left: 750px; 
 }
 
 .pad-2 {
-  bottom: 100 px; /* 20px desde el borde inferior ROJO */
-  right: 20px; /* 20px desde el borde derecho */
+  top: 500px; /*ROJO */
+  right: 580px; 
 }
 
 .pad-3 {
-  top: 600px; /* 20px desde el borde superior VERDE */
-  left: 100px; /* 20px desde el borde izquierdo */
+  top: 260px; /* VERDE */
+  right: 210px; 
 }
 
-.pad-4 {
-  bottom: 20px; /* 20px desde el borde inferior */
-  right: 20px; /* 20px desde el borde derecho */
-}

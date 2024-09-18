@@ -43,6 +43,16 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7em;
+  font-family: 'GodOfWar', sans-serif;
+  line-height: 1.1;
+}
+
 .simon-potions {
   word-spacing: 600px; /* Ajusta el valor según el espacio que necesites */
   white-space: nowrap; 
