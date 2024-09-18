@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'GodOfWar';
+  src: url('assets/GODOFWAR.TTF') format('truetype'); /* Cambia la ruta y el formato si es necesario */
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -26,25 +31,43 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  overflow: hidden;
 }
 
 h1 {
-  font-size: 3.2em;
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7em;
+  font-family: 'GodOfWar', sans-serif;
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
+.simon-potions {
+  word-spacing: 600px; /* Ajusta el valor según el espacio que necesites */
+  white-space: nowrap; 
+  -webkit-text-stroke: 3px black; 
+}
+
+
+button{
+  word-spacing: 30px; 
+  font-family: 'GodOfWar', sans-serif;
+  position: fixed;
+  bottom: 230px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  padding: 0.1em 0.5em;
+  font-size: 5em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #c5c5c582;
   cursor: pointer;
   transition: border-color 0.25s;
+  -webkit-text-stroke: 3px black; 
 }
+
 button:hover {
   border-color: #646cff;
 }

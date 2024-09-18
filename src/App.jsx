@@ -173,10 +173,11 @@ function App() {
     </>
   :
   <>
-    <div className='header'>
-      <h1>SUPER SIMON</h1>
-    </div>
-    <div className='app-container'>
+  <div>
+
+
+    <h1 className='simon-potions'>SIMON'S POTIONS</h1>
+    
     <button onClick={initGame}>GRAB A DRINK</button>
     </div>
 
