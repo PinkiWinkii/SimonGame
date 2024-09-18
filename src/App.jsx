@@ -147,6 +147,7 @@ function App() {
   
   return (
   <>
+    <div className={`app-container ${isGameOn ? 'background-game' : 'background-start'}`}>
   {
   isGameOn
   ?
@@ -175,9 +176,13 @@ function App() {
     <div className='header'>
       <h1>SUPER SIMON</h1>
     </div>
-    <button onClick={initGame}>START</button>
+    <div className='app-container'>
+    <button onClick={initGame}>GRAB A DRINK</button>
+    </div>
+
   </>
   }
+  </div>
   </>
   )
 }

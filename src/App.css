@@ -1,29 +1,52 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 1280;
   text-align: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-image: url('assets/FULL_GAME.jpg'); */
 }
 
+
+.background-game {
+  background-image: url('assets/FULL_GAME.jpg'); /* Imagen para cuando el juego está activo */
+  margin-top: -35px;
+}
+
+.background-start {
+  background-image: url('assets/innStart.jpg'); /* Imagen para cuando el juego no está activo */
+  margin-top: -35px;
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ /* Asegúrate de que esta ruta sea correcta */
+}
+
+
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 600px;
-  height: 600px;
-  background-color: black;
-  padding: 30px;
-  border-radius: 50%;
+  position: relative;
+  width: 100vw;
+  height: 100vh; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-image: url('assets/FULL_GAME.jpg'); */
+  overflow: hidden;
 }
 
 .pad {
   position: absolute;
-  width: 120px; /* Ancho igual al alto para que sean redondos */
-  height: 120px; /* Alto igual al ancho para que sean redondos */
-  margin: 15px; /* Espaciado entre botones */
-  border-radius: 50%; /* Hace que los botones sean perfectamente redondos */
-  transition: transform 0.2s; /* Añade una transición para el efecto de clic */
+  width: 120px; 
+  height: 120px;
+  margin: 15px; 
+  border-radius: 50%; 
+  transition: transform 0.2s; 
 }
 
 .pad:hover {
