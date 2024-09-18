@@ -51,6 +51,7 @@ h2 {
   font-size: 7em;
   font-family: 'GodOfWar', sans-serif;
   line-height: 1.1;
+  white-space: nowrap; 
 }
 
 .simon-potions {

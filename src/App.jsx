@@ -171,7 +171,7 @@ const colors = [
   isGameOn
   ?
   <>
-      <h2>Turn: {turn}| Speed: {speedIncreases}</h2>
+      <h2>Turn: {turn} | Speed: x{speedIncreases+1}</h2>
     <div className='container'>
 
       {colors.map((item, index) => {
