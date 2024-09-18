@@ -66,6 +66,7 @@ const colors = [
   const [pulses, setPulses] = useState(0);
   const [success, setSuccess] = useState(0);
   const [isGameOn, setIsGameOn] = useState(false);
+  const [speedIncreases, setSpeedIncreases] = useState(0);
 
   const initGame = () => {
     randomNumber();
@@ -119,6 +120,7 @@ const colors = [
       setCurrentGame([]);
       setIsAllowedToPlay(false);
       setSpeed(speedGame);
+      setSpeedIncreases(0);
       setSuccess(0);
       setPulses(0);
       setTurn(0);
@@ -126,8 +128,17 @@ const colors = [
   }, [isGameOn]);
 
   useEffect(() => {
-    if(success === sequence.length && success > 0) {
-      setSpeed(speed - sequence.length * 2);
+    if (success === sequence.length && success > 0) {
+      if (turn % 2 === 0) {
+        setSpeed(prevSpeed => {
+          const newSpeed = Math.max(prevSpeed - 40, 160);
+          if (newSpeed < prevSpeed) {
+            setSpeedIncreases(speedIncreases + 1); // Incrementa el contador si la velocidad disminuye
+          }
+          return newSpeed;
+        });
+      }
+
       setTimeout(() => {
         setSuccess(0);
         setPulses(0);
@@ -136,6 +147,7 @@ const colors = [
       }, 500);
     }
   }, [success]);
+
 
   useEffect(() => {
     if(!isAllowedToPlay) {
@@ -159,7 +171,7 @@ const colors = [
   isGameOn
   ?
   <>
-      <h2>Turn: {turn}</h2>
+      <h2>Turn: {turn}| Speed: {speedIncreases}</h2>
     <div className='container'>
 
       {colors.map((item, index) => {
