@@ -73,18 +73,19 @@ function App() {
   }
 
   const handleClick = (index) => {
-    if(isAllowedToPlay){
-      play({id: colors[index].sound});
-      colors[index].ref.current.style.opacity = (1);
-      colors[index].ref.current.style.scale = (0.9);
+    if (isAllowedToPlay) {
+      play({ id: colors[index].sound });
+      colors[index].ref.current.style.opacity = 1;
+      colors[index].ref.current.style.transform = 'scale(0.9)';
       setTimeout(() => {
-      colors[index].ref.current.style.opacity = (0.5);
-      colors[index].ref.current.style.scale = (1);
-      setCurrentGame([...currentGame, index]);
-      setPulses(pulses + 1);
+        colors[index].ref.current.style.opacity = 0.6;
+        colors[index].ref.current.style.transform = 'scale(1)';
+        setCurrentGame([...currentGame, index]);
+        setPulses(pulses + 1);
       }, speed / 2);
     }
-  }
+  };
+  
 
   useEffect(() => {
     if(pulses > 0) {
