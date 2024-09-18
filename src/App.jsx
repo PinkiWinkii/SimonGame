@@ -22,30 +22,37 @@ function App() {
     }
   })
 
+// Función para convertir hex a rgba
+const hexToRgba = (hex, alpha) => {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
 
 
-  const colors = [
-    {
-      color:'#FAF303',
-      ref: yellowRef,
-      sound: 'one'
-    },
-    {
-      color:'#030AFA',
-      ref: blueRef,
-      sound: 'two'
-    },
-    {
-      color:'#FA0E03',
-      ref: redRef,
-      sound: 'three'
-    },
-    {
-      color:'#0AFA03',
-      ref: greenRef,
-      sound: 'four'
-    },
-  ]
+const colors = [
+  {
+    color: hexToRgba('#FAF303', 0.6), // Amarillo con 30% de opacidad
+    ref: yellowRef,
+    sound: 'one'
+  },
+  {
+    color: hexToRgba('#5A9FE0', 0.7), // Azul con 30% de opacidad
+    ref: blueRef,
+    sound: 'two'
+  },
+  {
+    color: hexToRgba('#FA0E03', 0.6), // Rojo con 30% de opacidad
+    ref: redRef,
+    sound: 'three'
+  },
+  {
+    color: hexToRgba('#0AFA03', 0.6), // Verde con 30% de opacidad
+    ref: greenRef,
+    sound: 'four'
+  },
+];
 
   const minNumber = 0;
   const maxNumber = 3;
@@ -75,10 +82,10 @@ function App() {
   const handleClick = (index) => {
     if (isAllowedToPlay) {
       play({ id: colors[index].sound });
-      colors[index].ref.current.style.opacity = 1;
+      colors[index].ref.current.style.opacity = 0.7;
       colors[index].ref.current.style.transform = 'scale(0.9)';
       setTimeout(() => {
-        colors[index].ref.current.style.opacity = 0.6;
+        colors[index].ref.current.style.opacity = 0;
         colors[index].ref.current.style.transform = 'scale(1)';
         setCurrentGame([...currentGame, index]);
         setPulses(pulses + 1);
@@ -95,10 +102,10 @@ function App() {
         } else {
           console.log("FALLO");
           const index = sequence[pulses - 1];
-          if(index) colors[index].ref.current.style.opacity = (1);
+          if(index) colors[index].ref.current.style.opacity = (0.7);
           play({id: 'error'});
           setTimeout(() => {
-            if(index) colors[index].ref.current.style.opacity = (0.5);
+            if(index) colors[index].ref.current.style.opacity = (0);
             setIsGameOn(false);
           }, speed * 2);
           setIsAllowedToPlay(false);
@@ -135,9 +142,9 @@ function App() {
       sequence.map((item, index) => {
         setTimeout(() => {
           play({id: colors[item].sound});
-          colors[item].ref.current.style.opacity = (1);
+          colors[item].ref.current.style.opacity = (0.7);
           setTimeout(() => {
-            colors[item].ref.current.style.opacity = (0.5);
+            colors[item].ref.current.style.opacity = (0);
           }, speed / 2);
         }, speed * index);
       })
@@ -161,7 +168,7 @@ function App() {
             key={index}
             ref={item.ref}
             className={`pad pad-${index}`}
-            style={{backgroundColor:`${item.color}`, opacity:0.6}}
+            style={{backgroundColor:`${item.color}`, opacity:0}}
             onClick={() => handleClick(index)}
           >
           </div>

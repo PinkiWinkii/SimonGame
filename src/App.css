@@ -46,7 +46,9 @@
   height: 200px;
   margin: 15px; 
   border-radius: 50%; 
-  transition: transform 0.2s; 
+  transition: transform 0.2s,  box-shadow 0.2s; 
+  background-color: transparent; /* Fondo transparente */
+  box-shadow: inset 120px 80px 40px 20px  rgba(255, 255, 255, 0.7); /* Color blanco con transparencia */
 }
 
 .pad:hover {
@@ -57,20 +59,24 @@
 .pad-0 {
   top: 450px; /*AMARILLO*/
   left: 280px; 
+  box-shadow: 0 0 50px rgba(250, 243, 3, 0.7); /* Resplandor amarillo */
 }
 
 .pad-1 {
-  top: 270px; /*  AZUL */
+  top: 270px; /*2  AZUL */
   left: 750px; 
+  box-shadow: 0 0 50px rgba(68, 155, 255, 0.7); /* Resplandor azul */
 }
 
 .pad-2 {
   top: 500px; /*ROJO */
   right: 580px; 
+  box-shadow: 0 0 50px rgba(250, 14, 3, 0.7); /* Resplandor rojo */
 }
 
 .pad-3 {
   top: 260px; /* VERDE */
   right: 210px; 
+  box-shadow: 0 0 50px rgba(10, 250, 3, 0.7); /* Resplandor verde */
 }
 
