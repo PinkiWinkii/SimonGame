@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'GodOfWar';
-  src: url('assets/GODOFWAR.TTF') format('truetype'); /* Cambia la ruta y el formato si es necesario */
+  src: url('../assets/GODOFWAR.TTF') format('truetype'); /* Cambia la ruta y el formato si es necesario */
 }
 
 :root {

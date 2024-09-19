@@ -9,11 +9,11 @@
 
 
 .background-game {
-  background-image: url('assets/FULL_GAME.jpg'); /* Imagen para cuando el juego está activo */
+  background-image: url('../assets/FULL_GAME.jpg'); /* Imagen para cuando el juego está activo */
 }
 
 .background-start {
-  background-image: url('assets/innStart.jpg'); /* Imagen para cuando el juego no está activo */
+  background-image: url('../assets/innStart.jpg'); /* Imagen para cuando el juego no está activo */
 }
 
 .app-container {
